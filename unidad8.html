@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activ Obligatoria 3 JS</title>  
+   <style>
+        .centrar {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form action="get" class="centrar">
+        <label for="usuario">
+        Usuario: <input type="text" id="usuario">
+        </label>
+        <br>
+        <label for="password">
+        Clave: <input type="password" id="password">
+        </label>
+        <br>
+        <label for="enviar">
+        <input type="submit" value="Ingresar" id="boton">
+        </label>
+    </form>
+    <span id="mensaje"></span>
+
+    
+    <script>
+        var enviar = document.getElementById('boton')
+
+        var mensaje = document.getElementById('mensaje')
+        enviar.onclick = function(event){
+            event.preventDefault();
+            var usuario = document.getElementById('usuario').value
+            var password = document.getElementById('password').value
+            if (usuario ===''){
+                alert("Ingrese un nombre de usuario")
+            } else if( usuario.indexOf('@') === -1){
+                alert("Ingrese un mail válido")
+            } else if (password ===''){
+                alert("Ingrese su contraseña")
+            } else{
+                alert("Ingresando")
+            }
+        }
+    </script>
+</body>
+</html>
